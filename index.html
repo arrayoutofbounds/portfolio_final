@@ -3,6 +3,7 @@
 <head>
 	<title>jQuery Portfolio</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	
 </head>
 <body>
 
@@ -14,14 +15,23 @@
 
 <div id="overlay"></div>
 <div id="frame">
-	<img src="" alt=""/>
+	<table id="frame-table">
+		<tr>
+			<td id="left">
+				<img src="img/left.png" alt="left"/>
+			</td>
+			<td id="right">
+				<img src="img/right.png" alt="right"/>
+			</td>
+		</tr>
+	</table>
+	<img id="main" src="" alt=""/>
 </div>
 
 <div id="wrapper">
 	<ul id="portfolio">
 	
 	<!--each list is an image-->
-
 		<li><img src="images/1.jpg" alt="image 1"/></li>
 		<li><img src="images/2.jpg" alt="image 2"/></li>
 		<li><img src="images/3.jpg" alt="image 3"/></li>
@@ -34,5 +44,9 @@
 	</ul>
 </div>
 
+
+
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

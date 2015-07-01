@@ -59,4 +59,40 @@ h2{
 	width: 700px;
 	height: 500px;
 	margin-left: -350px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 15px;
+}
+
+#main{
+	width: 660px;
+	margin-left: 20px;
+}
+
+
+#portfolio li img:hover{
+	cursor: pointer;
+}
+
+#overlay:hover{
+	cursor: pointer;
+}
+
+#main:hover{
+	cursor: pointer;
+}
+
+#frame-table{
+	position: absolute;
+	width: 660px;
+	margin-left: 20px;
+}
+
+#right{
+	float: right;
+}
+
+#right,#left{
+	position: relative;
+	top: 150px;
 }
