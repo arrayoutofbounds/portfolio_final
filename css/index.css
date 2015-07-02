@@ -105,3 +105,21 @@ h2{
 #right img{
 	margin-right: -3px;
 }
+
+#description{
+	background-color: white;
+	padding-bottom: 10px;
+}
+
+#description p{
+	margin-left: 20px;
+}
+
+
+#filter li{
+	display: inline;
+}
+
+#filter li.active{
+	text-decoration: underline;
+}

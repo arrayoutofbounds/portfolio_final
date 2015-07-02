@@ -4,16 +4,39 @@ $(function(){
 	
 	// has parent li of the image that is clicked on
 	var current_li;
+
+	// stop fires after the image has stopped being dragged. The ajax sends the state of the portfolio so that the 
+	// next time the user comes on.....the order of the images is same as last time.
+	$("#portfolio").sortable();
+
+	// used for async text beneath image. CONTAINS AJAX feature
+	function setImg(src,id){
+		
+		// frame has an empty image.....so set its source to the image clicked on!
+		$("#main").attr("src",src);
+
+		var path = "text/" + id + ".txt";
+
+		// FIRST LINE OF AJAX CODE
+		// get accesses the file following the path. The data parameter is what is returned from the servers....servesrs response.
+		// in this case, we want contents of the file that are stored under the path.
+		// get functions asks the server to get the file with the given path. The data in the function is the contents of the file....i.e the servers
+		// response
+		$.get(path,function(data){
+			$("#description p").html(data);
+		});
+	}
 	
 	$("#portfolio").on('click', 'img', function () {
     	// get path of image clicked
 		var source = $(this).attr("src");
-
+		var id = $(this).attr("id");
 		// parent li of the source image
 		current_li = $(this).parent();
 
-		// frame has an empty image.....so set its source to the image clicked on!
-		$("#main").attr("src",source);
+		
+		setImg(source,id);
+
 
 		// we want the overlay and frame to appear
 		$("#frame").fadeIn();
@@ -38,7 +61,9 @@ $(function(){
 		}
 
 		var next_src = next_li.children("img").attr("src");
-		$("#main").attr("src",next_src);
+		var id = next_li.children("img").attr("id");
+
+		setImg(next_src,id);
 
 		current_li = next_li;
 	});
@@ -55,7 +80,9 @@ $(function(){
 
 		
 		var prev_src = prev_li.children("img").attr("src");
-		$("#main").attr("src",prev_src);
+		var id = prev_li.children("img").attr("id");
+
+		setImg(prev_src,id);
 
 		current_li = prev_li;
 	});
