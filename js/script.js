@@ -61,6 +61,14 @@ $(function(){
 	});
 
 
+	$("#right, #left").mouseover(function(){
+		$(this).css("opacity","0.75");
+	});
+
+	$("#right, #left").mouseleave(function(){
+		$(this).css("opacity","0.5");
+	});
+
 	// when any image is clicked
 	/*
 	$("#portfolio img").click(function(){

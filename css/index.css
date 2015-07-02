@@ -95,4 +95,13 @@ h2{
 #right,#left{
 	position: relative;
 	top: 150px;
+	opacity: 0.5;
+}
+
+#left img{
+	margin-left: -3px;
+}
+
+#right img{
+	margin-right: -3px;
 }
